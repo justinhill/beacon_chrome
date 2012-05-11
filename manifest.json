@@ -1,0 +1,10 @@
+{
+	"name" : "Lighthouse",
+	"version" : "0.0.1",
+	"description" : "Extension for Lighthouse. Right now, jumps directly to ticket number.",
+	"options_page" : "settings.html",
+	"browser_action" : {
+		"default_icon" : "lighthouse.gif",
+		"default_popup" : "ticket_form.html"
+	}	
+}

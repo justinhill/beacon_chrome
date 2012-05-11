@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Lighthouse Extension Settings</title>
+	<script type="text/javascript">
+		function save_options() {
+			var subdomain = document.getElementById("subdomain").value;
+			localStorage["subdomain"] = subdomain;
+			
+			var status = document.getElementById("status");
+			status.innerHTML = "Settings Saved.";
+		  setTimeout(function() {
+		    status.innerHTML = "";
+		  }, 750);		
+		}
+		
+		function restore_options() {
+			var subdomain = localStorage["subdomain"];
+			if (!subdomain) {
+				return;
+			}
+			
+			var text_subdomain = document.getElementById("subdomain");
+			text_subdomain.value = subdomain;
+		}
+	</script>
+</head>
+<body onload="restore_options()">
+	Lighthouse subdomain
+	<input id="subdomain" type="text" name="subdomain" />
+	
+	<br>
+	<button onclick="save_options()">Save</button>
+	
+	<div id="status"></div>
+</body>
+</html>

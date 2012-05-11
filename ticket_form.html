@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function setFocus() {
+				var ticket = document.getElementById("ticket_number");
+				ticket.focus();
+			}
+			
+			function goToTicket() {
+				var ticket = document.getElementById("ticket_number").value;
+				chrome.tabs.create({url : "https://"+localStorage["subdomain"]+".lighthouseapp.com/projects/57772-cie/tickets/"+ticket})
+			}
+		</script>
+	</head>
+	<body onload="setFocus()">
+		<form onsubmit="goToTicket(); return false;">
+			<input id="ticket_number" type="text" name="ticket_number"></input>
+		</form>
+	</body>
+</html>
